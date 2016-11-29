@@ -34,8 +34,15 @@ public class RecipeList extends ListActivity {
     }
 
 
-    public List<Entry> getRecipes(){
-        return userRecipes;
+    public List<Recipe> getRecipes(){
+        List<Recipe> recipeList = new ArrayList<Recipe>();
+
+        for(int i = 0; i < userRecipes.size(); i++){
+            recipeList.add((Recipe)userRecipes.get(i).getValue());
+        }
+
+
+        return recipeList;
     }
     public void addRecipe(Recipe recipe)throws IOException{
         recipeDB.addToDB(recipe);

@@ -18,9 +18,9 @@ import static android.icu.lang.UCharacter.GraphemeClusterBreak.T;
 public class SearchScreen extends AppCompatActivity {
 
     ListView foodListView;
-    ArrayAdapter<String> foodAdapter;
+    ArrayAdapter<Ingredient> foodAdapter;
 
-    List<String> userFoodList;
+    List<Ingredient> userFoodList;
     List<String> searchedItems;
 
 
@@ -29,11 +29,11 @@ public class SearchScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_screen);
 
-        userFoodList = FoodList.userFoods;
+        userFoodList = FoodList.getIngedientList();
         searchedItems = new ArrayList<String>();
 
         foodListView = (ListView) findViewById(R.id.listView5);
-        foodAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, userFoodList);
+        foodAdapter = new ArrayAdapter<Ingredient>(this, android.R.layout.simple_list_item_1, userFoodList);
         foodListView.setAdapter(foodAdapter);
 
         System.out.println(FoodList.userFoods.toString());

@@ -18,7 +18,7 @@ public class FoodList extends ListActivity{
 
 
     public static List<Entry> userFoods;
-    private IngredientDataSource ingredientDB;
+    private static IngredientDataSource ingredientDB;
 
 
     public void onCreate(Bundle savedInstanceState){
@@ -48,12 +48,18 @@ public class FoodList extends ListActivity{
     }
 
 
-    public void addItemToFoods(String food) throws IOException{
+    public static void addItemToFoods(String food) throws IOException{
         ingredientDB.addToDB(new Ingredient(food));
     }
 
-    public List<Entry> getList (){
-        return userFoods;
+    public static List<Ingredient> getIngedientList (){
+        List<Ingredient> ingredientList = new ArrayList<Ingredient>();
+
+        for(int i = 0; i < userFoods.size(); i++){
+            ingredientList.add((Ingredient)userFoods.get(i).getValue());
+        }
+
+        return ingredientList;
     }
 
     private boolean checkInDB(String s){

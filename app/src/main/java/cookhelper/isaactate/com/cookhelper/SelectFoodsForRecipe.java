@@ -15,23 +15,23 @@ public class SelectFoodsForRecipe extends AppCompatActivity {
 
 
     ListView foodListView;
-    ArrayAdapter<String> foodAdapter;
+    ArrayAdapter<Ingredient> foodAdapter;
     List<String> selectedItems;
 
 
     //Where all foods will be stored
-    List<String> userFoodList;
+    List<Ingredient> userFoodList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_foods_for_recipe);
 
-        userFoodList = FoodList.userFoods;
+        userFoodList = FoodList.getIngedientList();
         selectedItems = new ArrayList<String>();
 
         foodListView = (ListView) findViewById(R.id.stupidList);
-        foodAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, userFoodList);
+        foodAdapter = new ArrayAdapter<Ingredient>(this, android.R.layout.simple_list_item_1, userFoodList);
         foodListView.setAdapter(foodAdapter);
 
         foodListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {

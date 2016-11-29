@@ -16,7 +16,7 @@ public class AddEditRecipe extends AppCompatActivity {
     ArrayAdapter<String> recipeAdapter;
 
     //Where all foods will be stored
-    List<Entry> userRecipeList;
+    List<Recipe> userRecipeList;
     List<String> stringList;
 
 
@@ -38,7 +38,7 @@ public class AddEditRecipe extends AppCompatActivity {
         stringList = new ArrayList<String>();
 
         for(int i=0; i<userRecipeList.size(); i++){
-            stringList.add(userRecipeList.get(i).getValue().getRecipeTitle());
+            stringList.add(userRecipeList.get(i).getRecipeTitle());
         }
 
         recipeListView = (ListView) findViewById(R.id.listView2);

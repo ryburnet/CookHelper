@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,10 +18,10 @@ import static cookhelper.isaactate.com.cookhelper.FoodList.userFoods;
 public class AddEditFood extends AppCompatActivity {
 
     ListView foodListView;
-    ArrayAdapter<String> foodAdapter;
+    ArrayAdapter<Ingredient> foodAdapter;
 
     //Where all foods will be stored
-    List<Entry> userFoodList;
+    List<Ingredient> userFoodList;
 
 
 
@@ -30,23 +31,23 @@ public class AddEditFood extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_edit_food);
-
-        userFoodList = FoodList.userFoods;
+        FoodList temp = new FoodList();
+        userFoodList = temp.getIngedientList();
 
         foodListView = (ListView) findViewById(R.id.foodList);
-        foodAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, userFoodList);
+        foodAdapter = new ArrayAdapter<Ingredient>(this, android.R.layout.simple_list_item_1, userFoodList);
         foodListView.setAdapter(foodAdapter);
 
 
     }
 
-    public void addFood(View view) {
+    public void addFood(View view) throws IOException{
 
         EditText editText = (EditText) findViewById(R.id.editText3);
         String foodName = editText.getText().toString();
 
         if(foodName != null) {
-            FoodList.userFoods.add(foodName);
+            FoodList.addItemToFoods(foodName);
         }
 
         editText.setText("");
