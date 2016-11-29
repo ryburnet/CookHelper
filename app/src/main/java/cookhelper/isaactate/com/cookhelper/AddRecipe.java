@@ -15,7 +15,7 @@ public class AddRecipe extends AppCompatActivity {
     }
 
     public void createARecipe(View view){
-
+//grgdrsg
         EditText titleText = (EditText) findViewById(R.id.recipeTitleBox);
         EditText editDirections = (EditText) findViewById(R.id.recipeInstBox);
 
