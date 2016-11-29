@@ -14,7 +14,7 @@ import java.util.List;
  * Created by Isaac on 2016-11-25.
  */
 
-public class RecipeList extends ListActivity implements AdapterView.OnItemClickListener {
+public class RecipeList extends ListActivity {
 
     private static List<Entry> userRecipes;
     private RecipeDataSource recipeDB;
@@ -35,9 +35,7 @@ public class RecipeList extends ListActivity implements AdapterView.OnItemClickL
         catch(ClassNotFoundException c){}
     }
 
-    public void onItemClick(AdapterView<?> parent, View view,int position, long id){
 
-    }
     public List<Entry> getRecipes(){
         return userRecipes;
     }
