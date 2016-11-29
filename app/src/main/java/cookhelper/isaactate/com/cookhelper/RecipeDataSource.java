@@ -68,13 +68,13 @@ public class RecipeDataSource {
     }
 
     public List<Entry> queryDB(String query) throws IOException, ClassNotFoundException{
-        List<Entry> results = new ArrayList<Entry>();
+        //List<Entry> results = new ArrayList<Entry>();
         List<Entry> allEntries = new ArrayList<Entry>();
         Cursor cursor = database.query(TABLE_RECIPES, allColumns, null, null, null, null, null);
         cursor.moveToFirst();
         while(!cursor.isAfterLast()){
             long id = cursor.getLong(0);
-            Entry entry = new Entry(id,decodeFromString(cursor.getString(1)));
+            Entry entry = new Entry(id,(Recipe)decodeFromString(cursor.getString(1)));
             allEntries.add(entry);
             cursor.moveToNext();
         }
@@ -85,7 +85,7 @@ public class RecipeDataSource {
         System.out.println(checkRecipeSearch((Recipe)allEntries.get(0).getValue(),query));
 
 
-        return results;
+        return allEntries;
     }
 
     public List<String> andQueries(String q){

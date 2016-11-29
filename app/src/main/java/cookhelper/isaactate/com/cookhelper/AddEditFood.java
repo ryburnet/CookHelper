@@ -20,7 +20,7 @@ public class AddEditFood extends AppCompatActivity {
     ArrayAdapter<String> foodAdapter;
 
     //Where all foods will be stored
-    List<String> userFoodList;
+    List<Entry> userFoodList;
 
 
 

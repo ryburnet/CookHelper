@@ -16,10 +16,8 @@ import java.util.List;
 
 public class RecipeList extends ListActivity {
 
-    private static List<Entry> userRecipes;
+    private List<Entry> userRecipes;
     private RecipeDataSource recipeDB;
-
-
 
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);

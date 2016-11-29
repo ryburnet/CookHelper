@@ -17,7 +17,7 @@ import static android.R.id.list;
 public class FoodList extends ListActivity{
 
 
-    private static List<Entry> userFoods;
+    public static List<Entry> userFoods;
     private IngredientDataSource ingredientDB;
 
 
