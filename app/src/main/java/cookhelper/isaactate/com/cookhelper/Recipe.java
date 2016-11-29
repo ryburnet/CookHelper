@@ -1,5 +1,6 @@
 package cookhelper.isaactate.com.cookhelper;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,7 +8,7 @@ import java.util.List;
  * Created by Isaac on 2016-11-25.
  */
 
-public class Recipe {
+public class Recipe implements Serializable{
 
     private String recipeTitle;
     private String recipeText;
@@ -43,4 +44,6 @@ public class Recipe {
     public String getText() {return recipeText;}
 
     public void  setText(String text) {this.recipeText = text;}
+
+    public ArrayList<String> getIngredients(){ return ingredients;}
 }
