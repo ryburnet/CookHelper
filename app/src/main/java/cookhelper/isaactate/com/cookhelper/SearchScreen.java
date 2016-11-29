@@ -26,10 +26,12 @@ public class SearchScreen extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        System.out.println(">>>>>>>>>>>>>>>> entering searchscreen oncreate");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_screen);
-
-        userFoodList = FoodList.getIngedientList();
+        System.out.println(">>>>>>>>>>>>>>>>>> setContentView");
+        userFoodList = new FoodList().getIngedientList();
+        System.out.println(">>>>>>>>>>>>>>>> userfoodlist = ...");
         searchedItems = new ArrayList<String>();
 
         foodListView = (ListView) findViewById(R.id.listView5);

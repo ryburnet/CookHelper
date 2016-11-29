@@ -34,6 +34,8 @@ public class FoodList extends ListActivity{
         catch(IOException i){}
         catch(ClassNotFoundException c){}
     }
+
+
     public void checkRecipeIngredientInput(String input) throws IOException{
         String[] split = input.split(", ");
         for(int i = 0; i < split.length; i++){

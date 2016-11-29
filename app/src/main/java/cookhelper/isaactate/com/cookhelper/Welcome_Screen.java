@@ -16,9 +16,10 @@ public class Welcome_Screen extends AppCompatActivity {
     }
 
     public void toSearchScreen (View view){
-
+        System.out.println(">>>>>>>>>>>>>>>> entering welcome_screen tosearchscreen");
         Intent myIntent = new Intent(this, SearchScreen.class);
         startActivity(myIntent);
+        System.out.println(">>>>>>>>>>>>>>>> exiting welcome_screen tosearchscreen");
     }
 
     public void toRecentRecipe (View view){
